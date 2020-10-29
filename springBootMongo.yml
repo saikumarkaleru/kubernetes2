@@ -14,7 +14,7 @@ kind: ReplicationController
 metadata:
   name: spring-controller
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     app: springboot
   template:
@@ -23,7 +23,7 @@ spec:
         app: springboot
     spec:
       containers:
-      - image: 9398320218/mini_project:38
+      - image: 9398320218/mini_project
         name: springboot
         ports:
         - containerPort: 8080  
@@ -60,7 +60,7 @@ kind: ReplicationController
 metadata:
   name: mongo-controller
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     app: mongo
   template:
@@ -86,7 +86,7 @@ spec:
         - containerPort: 27017
         volumeMounts:
         - name: mongo-persistent-storage
-          mountPath: /data/db
+          mountPath: /data/db 
       volumes:
       - name: mongo-persistent-storage
         hostPath:
