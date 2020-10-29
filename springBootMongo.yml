@@ -1,6 +1,8 @@
 # Config Map
 kind: ConfigMap 
 apiVersion: v1 
+metadata:
+  name: springapp-configmap
 data:
   # Configuration values can be set as key-value properties
   username: springapp
@@ -14,11 +16,11 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: springboot
+    app: springboot:${BUILD_NUMBER}
   template:
     metadata:
       labels:
-        app: springboot
+        app: springboot:$BUILD_NUMBER
     spec:
       containers:
       - image: 9398320218/mini_project:$BUILD_NUMBER
