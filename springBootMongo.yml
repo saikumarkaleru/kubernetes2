@@ -10,7 +10,7 @@ data:
 ---
 # Replication Controller for springapp
 apiVersion: v1
-kind: ReplicationController
+kind: Deployment
 metadata:
   name: spring-controller
 spec:
@@ -23,7 +23,7 @@ spec:
         app: springboot
     spec:
       containers:
-      - image: 9398320218/mini_project
+      - image: 9398320218/mini_project:latest
         name: springboot
         ports:
         - containerPort: 8080  
