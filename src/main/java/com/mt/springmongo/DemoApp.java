@@ -16,12 +16,4 @@ public class DemoApp {
         SpringApplication.run(DemoApp.class, args);
     }
 
-    @RequestMapping("/")
-    public String index() {
-        return "index.html";
-    }
-    @RequestMapping("/save")
-    public String index1() {
-        return "index.html";
-    }
-}
+ }
