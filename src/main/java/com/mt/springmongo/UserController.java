@@ -3,11 +3,14 @@ package com.mt.springmongo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@ComponentScan(basePackages = "com.mt.*")
 public class UserController {
     private final UserRepository userRepository;
     
@@ -18,6 +21,10 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
+    @RequestMapping("/")
+    public String index() {
+        return "index.html";
+    }
     @PostMapping(value = "/save")
     public String save(@RequestParam("firstName") String firstName,
                        @RequestParam("lastName") String lastName,
