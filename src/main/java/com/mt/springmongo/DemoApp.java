@@ -6,11 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Main Application controller.
- *
- * @author Mithun 
- */
+
 @Controller
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "com.mt.*")
@@ -22,6 +18,10 @@ public class DemoApp {
 
     @RequestMapping("/")
     public String index() {
+        return "index.html";
+    }
+    @RequestMapping("/save")
+    public String index1() {
         return "index.html";
     }
 }
