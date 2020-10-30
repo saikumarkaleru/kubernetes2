@@ -14,9 +14,9 @@ kind: Deployment
 metadata:
   name: spring-controller
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
-    type: RollingUpdate
+    type: Recreate
     rollingUpdate:
       maxSurge: 1        # how many pods we can add at a time
       maxUnavailable: 0 
@@ -66,9 +66,9 @@ kind: Deployment
 metadata:
   name: mongo-controller
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
-    type: RollingUpdate
+    type: Recreate
     rollingUpdate:
       maxSurge: 1        # how many pods we can add at a time
       maxUnavailable: 0 
