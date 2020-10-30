@@ -14,12 +14,12 @@ kind: Deployment
 metadata:
   name: spring-controller
 spec:
-  replicas: 1
+  replicas: 3
   strategy:
-    type: Recreate
-    #rollingUpdate:
-      #maxSurge: 1        # how many pods we can add at a time
-      #maxUnavailable: 0 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1        # how many pods we can add at a time
+      maxUnavailable: 0 
   selector:
     matchLabels:
       app: springboot
@@ -67,8 +67,8 @@ metadata:
   name: mongo-controller
 spec:
   replicas: 1
-  strategy:
-    type: Recreate
+  #strategy:
+    #type: Recreate
     #rollingUpdate:
       #maxSurge: 1        # how many pods we can add at a time
       #maxUnavailable: 0 
