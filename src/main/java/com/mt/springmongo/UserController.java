@@ -7,11 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@ComponentScan(basePackages = "com.mt.*")
-@RequestMapping(path = "/")
+@RestController
+@RequestMapping("/")
 public class UserController {
     private final UserRepository userRepository;
     
@@ -26,7 +27,7 @@ public class UserController {
     public String index() {
         return "index.html";
     }
-    @RequestMapping("/save")
+    @RequestMapping(value = "/save" , method = RequestMethod.POST)
     public String index3() {
         return "index.html";
     }
