@@ -34,6 +34,6 @@ public class UserController {
         User user = new User(firstName, lastName, email);
         userRepository.save(user);
 
-        return "redirect:/";
+        return "index.html";
     }
 }
