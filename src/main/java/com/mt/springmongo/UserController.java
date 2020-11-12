@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @ComponentScan(basePackages = "com.mt.*")
+@RequestMapping(path = "/")
 public class UserController {
     private final UserRepository userRepository;
     
@@ -26,7 +27,7 @@ public class UserController {
         return "index.html";
     }
     @PostMapping("/save")
-    public String save(@RequestParam("firstName") String firstName,
+    public String saving_person(@RequestParam("firstName") String firstName,
                        @RequestParam("lastName") String lastName,
                        @RequestParam("email") String email) {
 
