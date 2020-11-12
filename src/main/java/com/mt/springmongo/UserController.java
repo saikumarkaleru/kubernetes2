@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @ComponentScan(basePackages = "com.mt.*")
-@RequestMapping(path = "/")
 public class UserController {
     private final UserRepository userRepository;
     
@@ -22,10 +21,7 @@ public class UserController {
     public UserController(final UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-    @RequestMapping("/error" )
-    public String error() {
-        return "index.html";
-    }
+  
     @RequestMapping("/")
     public String index() {
         return "index.html";
