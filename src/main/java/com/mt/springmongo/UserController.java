@@ -25,7 +25,7 @@ public class UserController {
     public String index() {
         return "index.html";
     }
-    @RequestMapping("/save")
+    @PostMapping("/save")
     public String save(@RequestParam("firstName") String firstName,
                        @RequestParam("lastName") String lastName,
                        @RequestParam("email") String email) {
