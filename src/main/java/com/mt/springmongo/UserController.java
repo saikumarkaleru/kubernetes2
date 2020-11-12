@@ -26,10 +26,15 @@ public class UserController {
     public String index() {
         return "index.html";
     }
+    @RequestMapping("/error" )
+    public String error() {
+        return "index.html";
+    }
     @RequestMapping("/save" )
     public String index3() {
         return "index.html";
     }
+    
     @PostMapping("/save")
     public String saving_person(@RequestParam("firstName") String firstName,
                        @RequestParam("lastName") String lastName,
